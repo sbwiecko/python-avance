@@ -4,5 +4,8 @@ fichiers = ['C:/dossier_test/fichier01.jpg',
             'C:/dossier_test/fichier04.jpg',
             'C:/dossier_test/fichier05.jpg']
 
-au_moins_un_png = 'INSERER CODE ICI'
-tous_des_jpg = 'INSERER CODE ICI'
+au_moins_un_png = any('.png' in file for file in fichiers ) # generator comprehension with any shortcuting once finds a True
+tous_des_jpg = all('.jpg' in file for file in fichiers)
+
+print(au_moins_un_png)
+print(tous_des_jpg)
